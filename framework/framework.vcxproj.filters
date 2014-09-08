@@ -51,6 +51,9 @@
     <ClCompile Include="SOCK_Stream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SynchronousEventDemultiplexerSock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reactor.h">
@@ -80,9 +83,6 @@
     <ClInclude Include="Event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EventHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="INET_Addr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -96,6 +96,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SynchronousEventDemultiplexerInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SynchronousEventDemultiplexerSock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandlerInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

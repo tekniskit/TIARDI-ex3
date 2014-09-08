@@ -2,9 +2,7 @@
 #include "Handle.h"
 #include "Event.h"
 
-class EventHandler{
+class EventHandlerInterface{
 public:
 	virtual void handleEvent(Handle* handle) = 0;
-private:
-	virtual Event* parseEvent(Handle* handle) = 0;
 };

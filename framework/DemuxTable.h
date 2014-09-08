@@ -1,6 +1,6 @@
 #pragma once
 #include <map>
-#include "EventHandler.h"
+#include "EventHandlerInterface.h"
 
 using namespace std;
 
@@ -8,10 +8,10 @@ class DemuxTable{
 public:
 	DemuxTable();
 	~DemuxTable();
-	EventHandler* getHandler(unsigned int eventType);
-	void addHandler(unsigned int eventType, EventHandler* eventHandler);
+	EventHandlerInterface* getHandler(unsigned int eventType);
+	void addHandler(unsigned int eventType, EventHandlerInterface* EventHandlerInterface);
 	void removeHandler(unsigned int eventType);	
 
 private:
-	map<unsigned int, EventHandler*> table_;
+	map<unsigned int, EventHandlerInterface*> table_;
 };

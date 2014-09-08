@@ -8,19 +8,19 @@ DemuxTable::~DemuxTable(){
 	table_.clear();
 }
 
-EventHandler* DemuxTable::getHandler(unsigned int eventType){
-	EventHandler* eventHandler = table_[eventType];
-	if (eventHandler != NULL)
+EventHandlerInterface* DemuxTable::getHandler(unsigned int eventType){
+	EventHandlerInterface* EventHandlerInterface = table_[eventType];
+	if (EventHandlerInterface != NULL)
 	{
-		return eventHandler;
+		return EventHandlerInterface;
 	}
 	else
 	{
 		return nullptr;
 	}
 }
-void DemuxTable::addHandler(unsigned int eventType, EventHandler* eventHandler){
-	table_.insert(std::make_pair(eventType, eventHandler));
+void DemuxTable::addHandler(unsigned int eventType, EventHandlerInterface* EventHandlerInterface){
+	table_.insert(std::make_pair(eventType, EventHandlerInterface));
 }
 
 void DemuxTable::removeHandler(unsigned int eventType){

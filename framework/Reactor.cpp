@@ -1,8 +1,8 @@
 #include "Reactor.h"
 #include "NetworkEvent.h"
-#include "EventHandler.h"
+#include "EventHandlerInterface.h"
 
-void Reactor::registerHandler(EventHandler* handler, Event_Type type)
+void Reactor::registerHandler(EventHandlerInterface* handler, Event_Type type)
 {
 	handlerTabel.addHandler(type, handler);
 }
@@ -16,7 +16,7 @@ void Reactor::removeHandler(Event_Type type)
 void Reactor::handleEvents(Time_Value* time)
 {
 	NetworkEvent event = demultiplexer->getNetworkEvent();
-	EventHandler* handler = handlerTabel.getHandler(event.getEventType());
+	EventHandlerInterface* handler = handlerTabel.getHandler(event.getEventType());
 
 	if (handler != nullptr)
 	{

@@ -18,9 +18,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	SynchronousEventDemultiplexerStub *stub = new SynchronousEventDemultiplexerStub();
 
 	Reactor reactor(stub);
-	reactor.registerHandler((EventHandler*)logEventHandler, 1);
-	reactor.registerHandler((EventHandler*)alarmEventHandler, 2);
-	reactor.registerHandler((EventHandler*)patientEventHandler, 3);
+	reactor.registerHandler((EventHandlerInterface*)logEventHandler, 1);
+	reactor.registerHandler((EventHandlerInterface*)alarmEventHandler, 2);
+	reactor.registerHandler((EventHandlerInterface*)patientEventHandler, 3);
 	while (true)
 	{
 		reactor.handleEvents();

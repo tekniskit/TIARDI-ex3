@@ -1,8 +1,8 @@
 #pragma once
-#include "EventHandler.h"
+#include "EventHandlerInterface.h"
 #include "Handle.h"
 
-class PatientEventHandler : EventHandler
+class PatientEventHandler : EventHandlerInterface
 {
 public:
 	void handleEvent(Handle* handle);

@@ -7,7 +7,7 @@ class Reactor:IReactor
 {
 
 public:
-	void registerHandler(EventHandler* handler, Event_Type type);
+	void registerHandler(EventHandlerInterface* handler, Event_Type type);
 	void removeHandler(Event_Type type);
 	void handleEvents(Time_Value* = 0);
 	Reactor(SynchronousEventDemultiplexerInterface* _demultiplexer);

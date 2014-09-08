@@ -1,7 +1,7 @@
 #pragma once
-#include "EventHandler.h"
+#include "EventHandlerInterface.h"
 
-class LogEventHandler : EventHandler
+class LogEventHandler : EventHandlerInterface
 {
 public:
 	void handleEvent(Handle* handle);
