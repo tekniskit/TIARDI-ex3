@@ -100,7 +100,7 @@
     <ClInclude Include="Reactor.h" />
     <ClInclude Include="Handle.h" />
     <ClInclude Include="HandleStub.h" />
-    <ClInclude Include="SynchronousEventDemultiplexer.h" />
+    <ClInclude Include="SynchronousEventDemultiplexerInterface.h" />
     <ClInclude Include="Tuple.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

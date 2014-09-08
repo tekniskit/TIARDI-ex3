@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "SynchronousEventDemultiplexerStub.h"
-#include "SynchronousEventDemultiplexer.h"
+#include "SynchronousEventDemultiplexerInterface.h"
 #include "PatientEventHandler.h"
 #include "AlarmEventHandler.h"
 #include "LogEventHandler.h"

@@ -1,7 +1,7 @@
 #pragma once
 #include "NetworkEvent.h"
 
-class SynchronousEventDemultiplexer {
+class SynchronousEventDemultiplexerInterface {
 public:
 	virtual NetworkEvent getNetworkEvent() = 0;
 };
