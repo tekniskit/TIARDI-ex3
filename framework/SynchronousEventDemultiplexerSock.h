@@ -5,6 +5,7 @@
 #include "SOCK_Stream.h"
 #include "SOCK_Acceptor.h"
 #include "INET_Addr.h"
+#include "NetworkHandle.h"
 
 using namespace std;
 
@@ -16,14 +17,16 @@ private:
 	fd_set readfds;
 	fd_set writefds;
 	fd_set Errorfds;
+	NetworkHandle handle;
 
-	void prepFdsSet(); 
+	void prepFdsSet();
+	void Disconnect(SOCK_Stream* value);
 
 public:
 	SynchronousEventDemultiplexerSock(INET_Addr addr); 
 	~SynchronousEventDemultiplexerSock();
 	NetworkEvent getNetworkEvent();
 	void handleEvent(Handle* handle);
-
+	
 	
 };
