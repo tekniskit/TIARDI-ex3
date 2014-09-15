@@ -7,6 +7,7 @@ class SOCK_Acceptor {
 	public:
 		SOCK_Acceptor (const INET_Addr &addr);
 		void accept (SOCK_Stream &s);
+		SOCKET* getSocket();
 
 	private:
 		SOCKET handle_;
