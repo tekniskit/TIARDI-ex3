@@ -17,7 +17,9 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 	// wait until either socket has data ready to be recv()d (timeout 10.5 secs)
 	tv.tv_sec = 10;
 	tv.tv_usec = 500000;
-	int n = socketList.size() > 0 ? (*socketList.back)->get_handle() + 1 : acceptorPtr->getSocket() + 1;
+
+	// to make it work with special sockets 
+	int n = socketList.size() > 0 ? (socketList.back())->get_handle() + 1 : *acceptorPtr->getSocket() + 1;
 
 	int rv = select(n, &readfds, &writefds, &Errorfds, &tv);
 
@@ -29,6 +31,7 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 	}
 	else 
 	{
+		/*
 		// one or both of the descriptors have data
 		if (FD_ISSET(s1, &readfds)) {
 			recv(s1, buf1, sizeof buf1, 0);
@@ -36,6 +39,7 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 		if (FD_ISSET(s2, &readfds)) {
 			recv(s1, buf2, sizeof buf2, 0);
 		}
+		*/
 	}
 
 	
