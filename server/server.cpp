@@ -2,7 +2,6 @@
 //
 #include "stdafx.h"
 #include "SynchronousEventDemultiplexerSock.h"
-#include "SynchronousEventDemultiplexerInterface.h"
 #include "PatientEventHandler.h"
 #include "AlarmEventHandler.h"
 #include "LogEventHandler.h"
@@ -16,7 +15,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	PatientEventHandler *patientEventHandler = new PatientEventHandler();
 	LogEventHandler *logEventHandler = new LogEventHandler();
 
-	INET_Addr addr(5500,0x7F000001); 
+	INET_Addr addr(5500, 0x7F000001); 
 
 	Reactor reactor;
 	SynchronousEventDemultiplexerSock *stub = new SynchronousEventDemultiplexerSock(addr, &reactor);
