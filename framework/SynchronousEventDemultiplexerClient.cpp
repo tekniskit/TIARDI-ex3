@@ -14,6 +14,7 @@ NetworkEvent SynchronousEventDemultiplexerClient::getNetworkEvent() {
 	tv.tv_usec = 500000;
 
 	fd_set writefds;
+	FD_ZERO(&writefds);
 	FD_SET(stream_->get_handle(), &writefds);
 
 	int rv = select(stream_->get_handle() + 1, NULL, &writefds, NULL, &tv);
