@@ -1,5 +1,6 @@
 #pragma once
 #include "SynchronousEventDemultiplexerInterface.h"
+#include "NetworkHandle.h"
 #include "HandleSock.h"
 
 class SynchronousEventDemultiplexerClient : public SynchronousEventDemultiplexerInterface {

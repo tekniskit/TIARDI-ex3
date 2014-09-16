@@ -54,7 +54,13 @@
     <ClCompile Include="SynchronousEventDemultiplexerSock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NetworkHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="HandleSock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SynchronousEventDemultiplexerClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,7 +113,13 @@
     <ClInclude Include="EventHandlerInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NetworkHandle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="HandleSock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SynchronousEventDemultiplexerClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

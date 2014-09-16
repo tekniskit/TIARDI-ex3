@@ -16,11 +16,15 @@ void Reactor::removeHandler(Event_Type type)
 void Reactor::handleEvents(Time_Value* time)
 {
 	NetworkEvent event = demultiplexer->getNetworkEvent();
-	EventHandlerInterface* handler = handlerTabel.getHandler(event.getEventType());
-
-	if (handler != nullptr)
+	if (event.getEventType() != 0)
 	{
-		handler->handleEvent(event.getHandle()); 
+
+		EventHandlerInterface* handler = handlerTabel.getHandler(event.getEventType());
+
+		if (handler != nullptr)
+		{
+			handler->handleEvent(event.getHandle());
+		}
 	}
 }
 
