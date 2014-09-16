@@ -78,6 +78,7 @@
     <ClCompile Include="INET_Addr.cpp" />
     <ClCompile Include="IReactor.cpp" />
     <ClCompile Include="NetworkEvent.cpp" />
+    <ClCompile Include="NetworkHandle.cpp" />
     <ClCompile Include="Reactor.cpp" />
     <ClCompile Include="HandleStub.cpp" />
     <ClCompile Include="SOCK_Acceptor.cpp" />
@@ -92,6 +93,7 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventHandlerInterface.h" />
     <ClInclude Include="INET_Addr.h" />
+    <ClInclude Include="NetworkHandle.h" />
     <ClInclude Include="SOCK_Acceptor.h" />
     <ClInclude Include="SOCK_Connector.h" />
     <ClInclude Include="SOCK_Stream.h" />

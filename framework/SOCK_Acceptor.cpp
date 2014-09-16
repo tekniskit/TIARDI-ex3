@@ -22,3 +22,8 @@ SOCK_Acceptor::SOCK_Acceptor(const INET_Addr &addr) {
 void SOCK_Acceptor::accept(SOCK_Stream &s) {
 	s.set_handle(_WINSOCKAPI_::accept(handle_, 0, 0));
 }
+
+SOCKET* SOCK_Acceptor::getSocket()
+{
+	return &handle_; 
+}
