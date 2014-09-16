@@ -1,5 +1,7 @@
 #include "SynchronousEventDemultiplexerSock.h"
 #include <string>
+#include <iostream>
+#include <WinSock2.h>
 
 SynchronousEventDemultiplexerSock::SynchronousEventDemultiplexerSock(INET_Addr addr, Reactor* reactor)
 {
@@ -35,10 +37,12 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 	}
 	else 
 	{
-		if (FD_ISSET(acceptorPtr->getSocket(), &readfds))
+		int response = FD_ISSET(*(acceptorPtr->getSocket()), &readfds);
+		if ( response > 0)
 		{
 			Nevent.setEventType(6); 
 			Nevent.setHandle(nullptr); 
+			std::cout << "Client connect event" << std::endl;
 			return Nevent; 
 		}
 
@@ -60,6 +64,7 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 					}
 					else
 					{
+						std::cout << "Networkdata: " << networkdata << std::endl;
 						char ev = networkdata[0]; 
 						handle = NetworkHandle(value);
 						Nevent.setEventType(ev-48);
@@ -114,6 +119,7 @@ void SynchronousEventDemultiplexerSock::handleEvent(Handle* handle)
 	SOCK_Stream* stream = new SOCK_Stream();
 	acceptorPtr->accept(*stream);
 	socketList.push_back(stream);
+	std::cout << "Client connected" << std::endl;
 }
 
 void SynchronousEventDemultiplexerSock::Disconnect(SOCK_Stream* value)
