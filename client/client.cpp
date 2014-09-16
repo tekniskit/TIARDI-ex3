@@ -6,6 +6,7 @@
 #include "INET_Addr.h"
 #include "SOCK_Connector.h"
 #include "Reactor.h"
+#include "WriteEventHandler.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -21,16 +22,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	
 	SynchronousEventDemultiplexerClient *demuxClient = new SynchronousEventDemultiplexerClient(&stream);
 	Reactor reactor(demuxClient);
+	WriteEventHandler *writeEventHandler = new WriteEventHandler();
 
-	// var writeEventHandler = ...
-
-	// Reactor reactor(demux);
-	//reactor.registerHandler((EventHandler*)writeEventHandler, 5); // 5 is write
+	reactor.registerHandler((EventHandlerInterface*)writeEventHandler, 4); // 4 is write
 	
-	//while (true)
-	//{
-		// reactor.handleEvents();
-	//}
+	while (true)
+	{
+		 reactor.handleEvents();
+	}
 
 	return 0;
 }
