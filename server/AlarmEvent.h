@@ -1,14 +1,11 @@
 #pragma once
-#include "../framework/Event.h"
+#include "Event.h"
 #include <string>
 
 using namespace std;
 
-
 class AlarmEvent : public Event {
 public:
-	
-
 	string getPriority();
 	void setPriority(string i);
 
@@ -18,5 +15,4 @@ public:
 private:
 	string priority_;
 	string comment_;
-
 };
