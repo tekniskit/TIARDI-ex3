@@ -5,6 +5,7 @@ SynchronousEventDemultiplexerSock::SynchronousEventDemultiplexerSock(INET_Addr a
 {
 	acceptorPtr = new SOCK_Acceptor(addr);
 	reactor->registerHandler(this, 6);
+	
 }
 
 SynchronousEventDemultiplexerSock::~SynchronousEventDemultiplexerSock()
@@ -16,7 +17,7 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 {
 	struct timeval tv;
 	NetworkEvent Nevent; 
-
+	prepFdsSet();
 	// wait until either socket has data ready to be recv()d (timeout 10.5 secs)
 	tv.tv_sec = 10;
 	tv.tv_usec = 500000;
@@ -59,8 +60,9 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 					}
 					else
 					{
+						char ev = networkdata[0]; 
 						handle = NetworkHandle(value);
-						Nevent.setEventType(networkdata[0]);
+						Nevent.setEventType(ev-48);
 						std::string data(networkdata + 1, resived-1);
 						Nevent.setHandle((Handle*)&handle); 
 						return Nevent; 
@@ -112,14 +114,10 @@ void SynchronousEventDemultiplexerSock::handleEvent(Handle* handle)
 	SOCK_Stream* stream = new SOCK_Stream();
 	acceptorPtr->accept(*stream);
 	socketList.push_back(stream);
-
-	prepFdsSet();
 }
 
 void SynchronousEventDemultiplexerSock::Disconnect(SOCK_Stream* value)
 {
 	socketList.remove(value);
 	delete value;
-
-	prepFdsSet();
 }
