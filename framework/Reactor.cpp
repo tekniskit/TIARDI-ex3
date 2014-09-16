@@ -28,7 +28,17 @@ void Reactor::handleEvents(Time_Value* time)
 	}
 }
 
+Reactor::Reactor()
+{
+
+}
+
 Reactor::Reactor(SynchronousEventDemultiplexerInterface* _demultiplexer)
+{
+	setSynchronousEventDemultiplexer(_demultiplexer);
+}
+
+void Reactor::setSynchronousEventDemultiplexer(SynchronousEventDemultiplexerInterface* _demultiplexer)
 {
 	demultiplexer = _demultiplexer;
 }
