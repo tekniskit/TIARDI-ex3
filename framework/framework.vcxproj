@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemuxTable.cpp" />
+    <ClCompile Include="HandleSock.cpp" />
     <ClCompile Include="INET_Addr.cpp" />
     <ClCompile Include="IReactor.cpp" />
     <ClCompile Include="NetworkEvent.cpp" />
@@ -84,6 +85,7 @@
     <ClCompile Include="SOCK_Acceptor.cpp" />
     <ClCompile Include="SOCK_Connector.cpp" />
     <ClCompile Include="SOCK_Stream.cpp" />
+    <ClCompile Include="SynchronousEventDemultiplexerClient.cpp" />
     <ClCompile Include="SynchronousEventDemultiplexerSock.cpp" />
     <ClCompile Include="SynchronousEventDemultiplexerStub.cpp" />
     <ClCompile Include="Tuple.cpp" />
@@ -92,11 +94,13 @@
     <ClInclude Include="DemuxTable.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventHandlerInterface.h" />
+    <ClInclude Include="HandleSock.h" />
     <ClInclude Include="INET_Addr.h" />
     <ClInclude Include="NetworkHandle.h" />
     <ClInclude Include="SOCK_Acceptor.h" />
     <ClInclude Include="SOCK_Connector.h" />
     <ClInclude Include="SOCK_Stream.h" />
+    <ClInclude Include="SynchronousEventDemultiplexerClient.h" />
     <ClInclude Include="SynchronousEventDemultiplexerSock.h" />
     <ClInclude Include="SynchronousEventDemultiplexerStub.h" />
     <ClInclude Include="IReactor.h" />

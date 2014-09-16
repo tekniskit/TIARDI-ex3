@@ -8,6 +8,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "framework", "framework\framework.vcxproj", "{6E92FD7A-52CD-4EB7-BE1F-2EB6927D83DD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client\client.vcxproj", "{D48206F1-DBE0-4D4E-9B38-313D80167016}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E92FD7A-52CD-4EB7-BE1F-2EB6927D83DD} = {6E92FD7A-52CD-4EB7-BE1F-2EB6927D83DD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
