@@ -6,6 +6,7 @@
 #include "SOCK_Acceptor.h"
 #include "INET_Addr.h"
 #include "NetworkHandle.h"
+#include "Reactor.h"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ private:
 	void Disconnect(SOCK_Stream* value);
 
 public:
-	SynchronousEventDemultiplexerSock(INET_Addr addr); 
+	SynchronousEventDemultiplexerSock(INET_Addr addr,Reactor* reactor); 
 	~SynchronousEventDemultiplexerSock();
 	NetworkEvent getNetworkEvent();
 	void handleEvent(Handle* handle);

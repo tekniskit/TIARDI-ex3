@@ -1,9 +1,10 @@
 #include "SynchronousEventDemultiplexerSock.h"
 #include <string>
 
-SynchronousEventDemultiplexerSock::SynchronousEventDemultiplexerSock(INET_Addr addr)
+SynchronousEventDemultiplexerSock::SynchronousEventDemultiplexerSock(INET_Addr addr, Reactor* reactor)
 {
 	acceptorPtr = new SOCK_Acceptor(addr);
+	reactor->registerHandler(this, 6);
 }
 
 SynchronousEventDemultiplexerSock::~SynchronousEventDemultiplexerSock()
