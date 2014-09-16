@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class AlarmEvent : public Event{
+class AlarmEvent : public Event {
 public:
 	
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "../framework/EventHandlerInterface.h"
+#include "EventHandlerInterface.h"
 
 class AlarmEventHandler : EventHandlerInterface
 {

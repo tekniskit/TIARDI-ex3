@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "SynchronousEventDemultiplexerStub.h"
-#include "SynchronousEventDemultiplexerInterface.h"
 #include "PatientEventHandler.h"
 #include "AlarmEventHandler.h"
 #include "LogEventHandler.h"
@@ -21,6 +20,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	reactor.registerHandler((EventHandlerInterface*)logEventHandler, 1);
 	reactor.registerHandler((EventHandlerInterface*)alarmEventHandler, 2);
 	reactor.registerHandler((EventHandlerInterface*)patientEventHandler, 3);
+
 	while (true)
 	{
 		reactor.handleEvents();
