@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DemuxTable.cpp" />
+    <ClCompile Include="HandleSock.cpp" />
     <ClCompile Include="INET_Addr.cpp" />
     <ClCompile Include="IReactor.cpp" />
     <ClCompile Include="NetworkEvent.cpp" />
@@ -91,6 +92,7 @@
     <ClInclude Include="DemuxTable.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventHandlerInterface.h" />
+    <ClInclude Include="HandleSock.h" />
     <ClInclude Include="INET_Addr.h" />
     <ClInclude Include="SOCK_Acceptor.h" />
     <ClInclude Include="SOCK_Connector.h" />
