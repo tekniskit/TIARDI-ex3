@@ -1,6 +1,5 @@
 // server.cpp : Defines the entry point for the console application.
 //
-
 #include "stdafx.h"
 #include "SynchronousEventDemultiplexerSock.h"
 #include "SynchronousEventDemultiplexerInterface.h"
@@ -17,14 +16,16 @@ int _tmain(int argc, _TCHAR* argv[])
 	PatientEventHandler *patientEventHandler = new PatientEventHandler();
 	LogEventHandler *logEventHandler = new LogEventHandler();
 
-	INET_Addr addr(5500,NULL); 
+	INET_Addr addr(5500,0x7F000001); 
 
-	SynchronousEventDemultiplexerSock *stub = new SynchronousEventDemultiplexerSock(;
-
-	Reactor reactor(stub);
+	Reactor reactor;
+	SynchronousEventDemultiplexerSock *stub = new SynchronousEventDemultiplexerSock(addr, &reactor);
+	reactor.setSynchronousEventDemultiplexer(stub); 
+	
 	reactor.registerHandler((EventHandlerInterface*)logEventHandler, 1);
 	reactor.registerHandler((EventHandlerInterface*)alarmEventHandler, 2);
 	reactor.registerHandler((EventHandlerInterface*)patientEventHandler, 3);
+
 	while (true)
 	{
 		reactor.handleEvents();

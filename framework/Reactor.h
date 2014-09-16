@@ -12,6 +12,7 @@ public:
 	void handleEvents(Time_Value* = 0);
 	void setSynchronousEventDemultiplexer(SynchronousEventDemultiplexerInterface*);
 	Reactor(SynchronousEventDemultiplexerInterface* _demultiplexer);
+	Reactor();
 
 private:
 	// variables 
