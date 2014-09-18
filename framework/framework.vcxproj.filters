@@ -83,9 +83,6 @@
     <ClInclude Include="Handle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HandleStub.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SynchronousEventDemultiplexerStub.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -120,6 +117,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SynchronousEventDemultiplexerClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleStub.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

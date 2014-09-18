@@ -69,7 +69,9 @@ NetworkEvent SynchronousEventDemultiplexerSock::getNetworkEvent()
 						handle = NetworkHandle(value);
 						Nevent.setEventType(ev-48);
 						std::string data(networkdata + 1, resived-1);
+						handle.setData(data);
 						Nevent.setHandle((Handle*)&handle); 
+						
 						return Nevent; 
 					}
 				}

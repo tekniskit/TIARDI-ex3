@@ -95,6 +95,7 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventHandlerInterface.h" />
     <ClInclude Include="HandleSock.h" />
+    <ClInclude Include="HandleStub.h" />
     <ClInclude Include="INET_Addr.h" />
     <ClInclude Include="NetworkHandle.h" />
     <ClInclude Include="SOCK_Acceptor.h" />
@@ -107,7 +108,6 @@
     <ClInclude Include="NetworkEvent.h" />
     <ClInclude Include="Reactor.h" />
     <ClInclude Include="Handle.h" />
-    <ClInclude Include="HandleStub.h" />
     <ClInclude Include="SynchronousEventDemultiplexerInterface.h" />
     <ClInclude Include="Tuple.h" />
   </ItemGroup>

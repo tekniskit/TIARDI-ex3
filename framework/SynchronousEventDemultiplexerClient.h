@@ -9,5 +9,6 @@ public:
 	NetworkEvent getNetworkEvent();
 
 private:		
-	SOCK_Stream *stream_;
+	SOCK_Stream *stream_; 
+	NetworkHandle handle;
 };

@@ -1,6 +1,6 @@
 #include "WriteEventHandler.h"
 void WriteEventHandler::handleEvent(Handle* handle){
-	counter_++;
+	counter_ = counter_++ % 4;
 
 	if (counter_ == 1) {
 		handle->send("1;TEXT to log!"); // TODO: Make class with serializer

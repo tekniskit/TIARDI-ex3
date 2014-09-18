@@ -31,7 +31,7 @@ NetworkEvent SynchronousEventDemultiplexerClient::getNetworkEvent() {
 	//Create write Event 
 	if (FD_ISSET(stream_->get_handle(), &writefds)) {
 		networkEvent.setEventType(4);
-		NetworkHandle handle(stream_);
+		handle = NetworkHandle(stream_);
 		networkEvent.setHandle(&handle);
 		return networkEvent;
 	}

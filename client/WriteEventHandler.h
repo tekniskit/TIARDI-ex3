@@ -8,5 +8,5 @@ public:
 	void handleEvent(Handle* handle);
 
 private:
-	int counter_;
+	int counter_ = 0;
 };
