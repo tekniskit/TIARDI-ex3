@@ -25,5 +25,5 @@ void SOCK_Acceptor::accept(SOCK_Stream &s) {
 
 SOCKET* SOCK_Acceptor::getSocket()
 {
-	return &handle_; 
+	return &handle_;
 }
