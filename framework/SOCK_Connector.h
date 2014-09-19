@@ -1,7 +1,6 @@
 #pragma once 
 #include <winsock2.h> 
 #include "INET_Addr.h"
-#pragma comment(lib, "Ws2_32.lib")
 
 class SOCK_Connector{
 	

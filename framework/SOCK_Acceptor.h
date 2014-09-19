@@ -2,7 +2,6 @@
 #include <winsock2.h>
 #include "INET_Addr.h"
 #include "SOCK_Stream.h"
-#pragma comment(lib, "Ws2_32.lib")
 
 class SOCK_Acceptor {
 	public:
